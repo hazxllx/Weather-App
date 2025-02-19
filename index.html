@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="weather-container">
+        <h2>Weather Forecast</h2>
+        <input type="text" id="city" placeholder="Enter city">
+        <button onclick="getWeather()">Search</button>
+
+        <img id="weather-icon" alt="Weather Icon">
+        <div id="temp-div"></div>
+        <div id="weather-info"></div>
+        <div id="hourly-forecast"></div>
+
+        <!-- Hidden template for hourly forecast items -->
+        <div id="hourly-item-template" class="hourly-item" style="display: none;">
+            <span class="hour"></span>
+            <img class="icon" alt="Hourly Weather Icon">
+            <span class="temperature"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
