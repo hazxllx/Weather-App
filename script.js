@@ -1,19 +1,19 @@
 // Function to fetch weather data from a given URL
 function fetchWeatherData(url) {
-    return fetch(url) // Asynchronous request using fetch
+    return fetch(url) // request
         .then(response => {
-            console.log('Fetching data from:', url); // Log the URL being fetched
-            if (!response.ok) { // Check if the response status is not OK
+            console.log('Fetching data from:', url); 
+            if (!response.ok) { // Check if the response status 
                 throw new Error('Error fetching data'); // Throw an error for handling later
             }
             return response.json(); // Parse and return the response as JSON
         })
         .then(data => {
-            console.log('Received data:', data); // Log the received data
+            console.log('Received data:', data); 
             return data; // Return the parsed data
         })
         .catch(error => {
-            console.error('Fetch error:', error); // Log any fetch errors
+            console.error('Fetch error:', error);
             throw error; // Re-throw the error for handling in the caller function
         });
 }
@@ -45,7 +45,7 @@ function getWeather() {
 
 // Function to display current weather information
 function displayWeather(data) {
-    console.log('Displaying weather:', data); // Log the weather data
+    console.log('Displaying weather:', data); 
 
     // Get elements to update the UI
     const tempDivInfo = document.getElementById('temp-div');
@@ -69,26 +69,26 @@ function displayWeather(data) {
     const description = weather[0].description; // Get the weather description
     const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@4x.png`; // Build the icon URL
 
-    // Update the UI with weather details
+    // Update the design with weather details
     tempDivInfo.innerHTML = `<p>${temperature}°C</p>`;
     weatherInfoDiv.innerHTML = `<p>${name}</p><p>${description}</p>`;
     weatherIcon.src = iconUrl; // Set the weather icon
-    weatherIcon.style.display = 'block'; // Make the weather icon visible
+    weatherIcon.style.display = 'block'; // visibility 
 
     // Set default background color
     let bgColor = "#D3D3D3"; 
 
     // Change background color based on the weather description
     if (description.includes("clear")) {
-        bgColor = "#87CEEB"; // Light blue for clear weather
+        bgColor = "#87CEEB"; // Light blue 
     } else if (description.includes("cloud")) {
-        bgColor = "#B0C4DE"; // Grayish blue for clouds
+        bgColor = "#B0C4DE"; // Grayish blue 
     } else if (description.includes("rain")) {
-        bgColor = "#4682B4"; // Dark blue for rain
+        bgColor = "#4682B4"; // Dark blue 
     } else if (description.includes("snow")) {
-        bgColor = "#FFFFFF"; // White for snow
+        bgColor = "#FFFFFF"; // White 
     } else if (description.includes("thunderstorm")) {
-        bgColor = "#2F4F4F"; // Dark gray for thunderstorms
+        bgColor = "#2F4F4F"; // Dark gray 
     }
 
     body.style.backgroundColor = bgColor; // Apply the background color to the body
@@ -114,8 +114,8 @@ function displayHourlyForecast(hourlyData) {
         // Clone the hidden template and update its content
         const hourlyItem = template.cloneNode(true);
         hourlyItem.style.display = 'block'; // Make the item visible
-        hourlyItem.querySelector('.hour').textContent = `${hour}:00`; // Set the hour
-        hourlyItem.querySelector('.icon').src = iconUrl; // Set the weather icon
+        hourlyItem.querySelector('.hour').textContent = `${hour}:00`; // the hour
+        hourlyItem.querySelector('.icon').src = iconUrl; // the weather icon
         hourlyItem.querySelector('.temperature').textContent = `${temperature}°C`; // Set the temperature
 
         // Add the updated item to the forecast container
