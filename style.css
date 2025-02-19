@@ -1,0 +1,137 @@
+/* Center the weather container vertically and horizontally with a clean background */
+body {
+    background: #4a8fd5; 
+    font-family: 'Tahoma';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    margin: 0; 
+    transition: background 0.5s ease-in-out; 
+}
+
+/* Weather Container Styles */
+#weather-container {
+    background: rgba(40, 39, 39, 0.3); 
+    max-width: 450px; 
+    width: 100%; 
+    padding: 20px; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Text Elements (Headings, Labels, and Paragraphs) */
+h2, label, p {
+    color: #ffffff; 
+    margin: 8px 0;
+}
+
+/* Input Field Styles */
+input {
+    width: 100%; 
+    padding: 12px; 
+    border-radius: 10px; 
+    border: 1px solid rgb(78, 111, 188); 
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+/* Button Styles */
+button {
+    background: #debff4; 
+    color: white; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer;
+    margin-top: 20px; 
+    width: 100px;
+    font-size: 15px;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: #487ad7; 
+}
+
+/* Temperature Display Styles */
+#temp-div p {
+    font-size: 60px; 
+    margin-top: -10px;
+    letter-spacing: 2px; 
+}
+
+/* Weather Info Styles */
+#weather-info {
+    font-size: 20px; 
+}
+
+/* Weather Icon Styles */
+#weather-icon {
+    width: 200px; 
+    height: 200px;
+    margin: 20px auto;
+    display: none;
+}
+
+/* Hourly Forecast Container */
+#hourly-forecast {
+    margin-top: 30px;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    display: flex; 
+    justify-content: flex-start; 
+    gap: 20px; 
+    padding: 10px 0; 
+}
+
+/* Styles for individual forecast items */
+.hourly-item {
+    flex: 0 0 auto; 
+    width: 120px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+    background: rgba(255, 255, 255, 0.15); 
+    padding: 10px 15px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+/* Hover Effect for hourly item */
+.hourly-item:hover {
+    transform: translateY(-5px); /* Move item up by 5px */
+}
+
+/* Icon & styles for the smaller weather icons */
+.hourly-item img {
+    width: 40px; 
+    height: 40px; 
+    margin-bottom: 8px; 
+}
+
+/* Text & styles for time and temperature */
+.hourly-item span {
+    font-size: 14px;
+    text-align: center; 
+    margin: 5px 0; 
+}
+
+/* Temperature inside Hourly Item */
+.hourly-item .temperature {
+    font-size: 16px;
+    margin-top: 5px; 
+    padding-left: 5px; 
+}
+
+/* Style for the heading above the hourly forecast */
+#hourly-heading {
+    color: #fff;
+    margin-top: 20px; 
+    font-size: 18px; 
+}
